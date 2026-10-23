@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b5655r4gpcoj1"]
+
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="1_l7t7u"]
+[ext_resource type="Script" uid="uid://ctnh1ss40felv" path="res://nave.gd" id="1_ta373"]
+[ext_resource type="PackedScene" uid="uid://dhy7cwe50334r" path="res://Bullet.tscn" id="2_n06m3"]
+
+[node name="Nave" type="RigidBody2D" unique_id=1707135784 node_paths=PackedStringArray("pivot")]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ta373")
+bullet = ExtResource("2_n06m3")
+pivot = NodePath("Pivot")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1963766003]
+position = Vector2(-3.8750005, 1.0000005)
+scale = Vector2(0.044921882, 0.04687499)
+texture = ExtResource("1_l7t7u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=208206914]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(-3, 3, -7, 3, -7, 3, -5, -1)
+
+[node name="Pivot" type="Node2D" parent="." unique_id=318504636]

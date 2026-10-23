@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhy7cwe50334r"]
+
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="1_ayd6b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ta373"]
+radius = 26.24881
+
+[node name="Bullet" type="RigidBody2D" unique_id=621432341]
+position = Vector2(180, 174)
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=662281483]
+position = Vector2(2, 3.8146973e-06)
+scale = Vector2(0.4453125, 0.3984375)
+texture = ExtResource("1_ayd6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436231566]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ta373")
+debug_color = Color(0.8898312, 0.32673344, 0, 0.41960785)

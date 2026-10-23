@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bx03n0cta7hwt"]
+
+[ext_resource type="Script" uid="uid://dvoo43cpflwr7" path="res://main_scene.gd" id="1_tphip"]
+[ext_resource type="PackedScene" uid="uid://b5655r4gpcoj1" path="res://Nave.tscn" id="2_7qccc"]
+[ext_resource type="PackedScene" uid="uid://dhy7cwe50334r" path="res://Bullet.tscn" id="3_ymjsc"]
+[ext_resource type="PackedScene" uid="uid://cq8i3i0shgvjj" path="res://Asteroid.tscn" id="4_yui23"]
+
+[node name="Main" type="Node2D" unique_id=1761369529]
+script = ExtResource("1_tphip")
+
+[node name="Nave" parent="." unique_id=1707135784 instance=ExtResource("2_7qccc")]
+position = Vector2(547, 298)
+
+[node name="Bullet" parent="." unique_id=621432341 instance=ExtResource("3_ymjsc")]
+position = Vector2(678, 285)
+gravity_scale = 0.0
+
+[node name="Asteroid" parent="." unique_id=1443438254 instance=ExtResource("4_yui23")]
+position = Vector2(900, 230)
