@@ -1,5 +1,8 @@
 class_name Ship extends RigidBody2D
 
+
+#los layers son los que mencionan a un objeto en especifico como funcionar, es decir que el 1 es la nave, el 2 es la bala y el 3 el asteroide
+#las mascaras son con quienes quieres interactuar, la nave quiere con el asteroide así que solo 3, pero el asteroide con la bala y la nave asi que es 1 y 2
 @export_range(200,800, 5) var speed : float = 600
 
 @export_category("Shooting")
@@ -26,7 +29,7 @@ func _take_dmg() -> void:
 	pass
 	
 func _shoot() -> void:
-	var bulletobjt = (bullet.instantiate() as Bullet)
+	var bulletobjt = (bullet.instantiate()) #as Bullet??????????
 	get_parent().add_child(bulletobjt)
 	bulletobjt.global_position = pivot.global_position
 	bulletobjt.linear_velocity = Vector2.UP * 1000

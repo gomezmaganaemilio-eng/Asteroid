@@ -12,8 +12,7 @@ script = ExtResource("1_tphip")
 position = Vector2(547, 298)
 
 [node name="Bullet" parent="." unique_id=621432341 instance=ExtResource("3_ymjsc")]
-position = Vector2(678, 285)
-gravity_scale = 0.0
+position = Vector2(739, 281)
 
 [node name="Asteroid" parent="." unique_id=1443438254 instance=ExtResource("4_yui23")]
 position = Vector2(900, 230)
