@@ -13,6 +13,7 @@ position = Vector2(547, 298)
 
 [node name="Asteroid" parent="." unique_id=1443438254 instance=ExtResource("4_yui23")]
 position = Vector2(900, 230)
+mass = 1000.0
 
 [node name="Asteroid2" parent="." unique_id=582548673 instance=ExtResource("4_yui23")]
 position = Vector2(181, 182)
@@ -20,9 +21,11 @@ mass = 1000.0
 
 [node name="Asteroid3" parent="." unique_id=1507153879 instance=ExtResource("4_yui23")]
 position = Vector2(326, 501)
+mass = 1000.0
 
 [node name="Asteroid4" parent="." unique_id=903101763 instance=ExtResource("4_yui23")]
 position = Vector2(519, 142)
+mass = 1000.0
 
 [node name="UI" type="Node" parent="." unique_id=1655044969 node_paths=PackedStringArray("ScoreDisplay")]
 script = ExtResource("5_yui23")
