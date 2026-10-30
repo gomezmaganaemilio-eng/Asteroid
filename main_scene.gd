@@ -1,6 +1,10 @@
-extends Node2D
+class_name GameManager extends Node2D
+static  var score: int = 0
+
 # Awake
 func _init() -> void:
+	print_debug("Game Started")
+	score = 0
 	pass
 
 
