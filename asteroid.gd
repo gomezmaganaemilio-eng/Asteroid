@@ -1,4 +1,4 @@
-class_name Asteroid extends RigidBody2D
+class_name NormalAsteroid extends A_Asteroid
 
 enum Size
 {
@@ -21,26 +21,14 @@ func _valid_size() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-func _physics_process(delta : float) -> void:
-	var colliders = get_colliding_bodies()
-	for obj in colliders:
-			if !(obj is Ship): continue
-			(obj as Ship)._take_dmg()
-			pass
-			
-			
-func _take_dmg() -> void:
-	GameManager.score += 10
+func on_dmg_tkn() -> void:
 	if size == Size.Small:
 		queue_free() #destruye el objeto
 		return
 	
 	
-	var newAteroid1 = duplicate() as Asteroid
-	var newAteroid2 = duplicate() as Asteroid
+	var newAteroid1 = duplicate() as A_Asteroid
+	var newAteroid2 = duplicate() as A_Asteroid
 	get_parent().add_child(newAteroid1)
 	get_parent().add_child(newAteroid2)
 	

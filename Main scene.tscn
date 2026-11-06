@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dvoo43cpflwr7" path="res://main_scene.gd" id="1_tphip"]
 [ext_resource type="PackedScene" uid="uid://b5655r4gpcoj1" path="res://Nave.tscn" id="2_7qccc"]
+[ext_resource type="Script" uid="uid://cca2qgiprep6h" path="res://hard_asteroid.gd" id="4_ec7p0"]
 [ext_resource type="PackedScene" uid="uid://cq8i3i0shgvjj" path="res://Asteroid.tscn" id="4_yui23"]
 [ext_resource type="Script" uid="uid://c3ldpypptwr6l" path="res://UpdateUI.gd" id="5_yui23"]
 
@@ -10,6 +11,7 @@ script = ExtResource("1_tphip")
 
 [node name="Nave" parent="." unique_id=1707135784 instance=ExtResource("2_7qccc")]
 position = Vector2(547, 298)
+collision_mask = 253
 
 [node name="Asteroid" parent="." unique_id=1443438254 instance=ExtResource("4_yui23")]
 position = Vector2(900, 230)
@@ -26,6 +28,7 @@ mass = 1000.0
 [node name="Asteroid4" parent="." unique_id=903101763 instance=ExtResource("4_yui23")]
 position = Vector2(519, 142)
 mass = 1000.0
+script = ExtResource("4_ec7p0")
 
 [node name="UI" type="Node" parent="." unique_id=1655044969 node_paths=PackedStringArray("ScoreDisplay")]
 script = ExtResource("5_yui23")

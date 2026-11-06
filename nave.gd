@@ -51,7 +51,7 @@ func _take_dmg() -> void:
 		print_debug("Ship Destroyed")
 		queue_free()
 		
-	global_position = initPos
+	teleport(initPos)
 	pass
 	
 func _shoot() -> void:
@@ -59,4 +59,12 @@ func _shoot() -> void:
 	get_parent().add_child(bulletobjt)
 	bulletobjt.global_position = pivot.global_position
 	bulletobjt.linear_velocity = Vector2.UP * 1000
+	pass
+
+func teleport(pos:Vector2) -> void:
+	PhysicsServer2D.body_set_state(
+		get_rid(),
+		PhysicsServer2D.BODY_STATE_TRANSFORM,
+		Transform2D.IDENTITY.translated(pos)
+	)
 	pass
