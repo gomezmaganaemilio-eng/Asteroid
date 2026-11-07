@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 func _take_dmg() -> void:
 	hitPoints-=1
 	iFrames = 10
-	
+	GameManager.HP -= 1
 	if hitPoints == 0:
 		print_debug("Ship Destroyed")
 		queue_free()
