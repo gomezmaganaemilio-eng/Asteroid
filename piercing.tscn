@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://h0fhjpi0jl0f"]
+
+[ext_resource type="Script" uid="uid://dtt0v8yno6xad" path="res://piercing_bullet.gd" id="1_yy7tx"]
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="2_jabja"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gfyl4"]
+radius = 7.071068
+
+[node name="Piercing" type="RigidBody2D" unique_id=1963822123]
+collision_layer = 8
+collision_mask = 4
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_yy7tx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1514100862]
+position = Vector2(0, -1.7881393e-07)
+scale = Vector2(0.1171875, 0.1328125)
+texture = ExtResource("2_jabja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=665911896]
+shape = SubResource("CircleShape2D_gfyl4")
+debug_color = Color(0.52863467, 0.5594872, 0.34171727, 0.41960785)

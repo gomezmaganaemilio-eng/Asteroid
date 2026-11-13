@@ -11,13 +11,20 @@ class_name Ship extends RigidBody2D
 
 var initPos = Vector2.ZERO
 var iFrames = 0
+var respawm_timer : NeoTimer = NeoTimer.new()
+var scene: Node2D
 # start
 func _ready() -> void:
 	initPos = global_position
+
+	respawm_timer.on_completion.connect(respawn)
+	respawm_timer.done = true
+	scene = get_parent()
 	pass 
 
+
 #Update
-func _process(delta: float) -> void:
+
 	if global_position.x >= 1152 - 28:
 		global_position.x = 0 + 30
 	if global_position.x <= 0 + 28:
@@ -30,6 +37,10 @@ func _process(delta: float) -> void:
 	pass
 	#fixed update
 func _physics_process(delta: float) -> void:
+	respawm_timer.tick(delta)
+	
+	if iFrames > 0:
+		iFrames -= 1
 	
 	if iFrames > 0:
 		contact_monitor = false
@@ -44,18 +55,29 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func _take_dmg() -> void:
-	hitPoints-=1
-	iFrames = 10
-	GameManager.HP -= 1
-	if hitPoints == 0:
-		print_debug("Ship Destroyed")
+	if iFrames > 0: return
+	despawn()
+	respawm_timer.start(1.5)
+	if hitPoints <= 0:
 		queue_free()
-		
+		print_debug("Ship destroyed")
+	pass
+	
+func despawn () -> void:
+	hitPoints-=1
+	get_parent().remove_child(self)
+	pass
+	
+func respawn() -> void:
+	
 	teleport(initPos)
+	linear_velocity = Vector2.ZERO
+	iFrames = 10
+	
 	pass
 	
 func _shoot() -> void:
-	var bulletobjt = (bullet.instantiate()) #as Bullet??????????
+	var bulletobjt = (bullet.instantiate()) as ABullet
 	get_parent().add_child(bulletobjt)
 	bulletobjt.global_position = pivot.global_position
 	bulletobjt.linear_velocity = Vector2.UP * 1000
