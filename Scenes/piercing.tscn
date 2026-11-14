@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://h0fhjpi0jl0f"]
 
-[ext_resource type="Script" uid="uid://dtt0v8yno6xad" path="res://piercing_bullet.gd" id="1_yy7tx"]
-[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="2_jabja"]
+[ext_resource type="Script" uid="uid://dtt0v8yno6xad" path="res://Scripts/piercing_bullet.gd" id="1_yy7tx"]
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://Sprites/icon.svg" id="2_jabja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gfyl4"]
 radius = 7.071068
 
 [node name="Piercing" type="RigidBody2D" unique_id=1963822123]
 collision_layer = 8
-collision_mask = 4
+collision_mask = 0
+mass = 0.001
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1

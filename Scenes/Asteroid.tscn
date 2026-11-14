@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://cq8i3i0shgvjj"]
 
-[ext_resource type="Script" uid="uid://ba8bguht4tnk5" path="res://asteroid.gd" id="1_l7pm1"]
-[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="2_n00aa"]
+[ext_resource type="Script" uid="uid://ba8bguht4tnk5" path="res://Scripts/asteroid.gd" id="1_l7pm1"]
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://Sprites/icon.svg" id="2_n00aa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0eft3"]
 radius = 73.00685
 
 [node name="Asteroid" type="RigidBody2D" unique_id=1443438254]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
+mass = 100.0
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1

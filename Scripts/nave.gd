@@ -24,7 +24,7 @@ func _ready() -> void:
 
 
 #Update
-
+func _process(delta:float) -> void:
 	if global_position.x >= 1152 - 28:
 		global_position.x = 0 + 30
 	if global_position.x <= 0 + 28:
@@ -57,7 +57,8 @@ func _physics_process(delta: float) -> void:
 func _take_dmg() -> void:
 	if iFrames > 0: return
 	despawn()
-	respawm_timer.start(1.5)
+	#respawm_timer.start(1.5)
+	respawn()
 	if hitPoints <= 0:
 		queue_free()
 		print_debug("Ship destroyed")
@@ -65,14 +66,17 @@ func _take_dmg() -> void:
 	
 func despawn () -> void:
 	hitPoints-=1
-	get_parent().remove_child(self)
+	iFrames = 10
+	GameManager.HP -= 1
+	#get_parent().remove_child(self)
 	pass
 	
 func respawn() -> void:
-	
-	teleport(initPos)
-	linear_velocity = Vector2.ZERO
 	iFrames = 10
+	teleport(initPos)
+	#scene.add_child(self)
+	linear_velocity = Vector2.ZERO
+	
 	
 	pass
 	

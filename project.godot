@@ -13,7 +13,7 @@ config_version=5
 config/name="Clase 1 Fran"
 run/main_scene="uid://bx03n0cta7hwt"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [display]
 

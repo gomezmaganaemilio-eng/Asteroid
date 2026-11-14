@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5655r4gpcoj1"]
 
-[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://icon.svg" id="1_l7t7u"]
-[ext_resource type="Script" uid="uid://ctnh1ss40felv" path="res://nave.gd" id="1_ta373"]
+[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://Sprites/icon.svg" id="1_l7t7u"]
+[ext_resource type="Script" uid="uid://ctnh1ss40felv" path="res://Scripts/nave.gd" id="1_ta373"]
 [ext_resource type="PackedScene" uid="uid://dhy7cwe50334r" path="res://Bullet.tscn" id="2_n06m3"]
 
 [node name="Nave" type="RigidBody2D" unique_id=1707135784 node_paths=PackedStringArray("pivot")]
