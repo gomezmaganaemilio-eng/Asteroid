@@ -1,10 +1,46 @@
 [gd_scene format=3 uid="uid://dhy7cwe50334r"]
 
 [ext_resource type="Script" uid="uid://dwpw2j4c86adf" path="res://Scripts/bullet.gd" id="1_4s4u5"]
-[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://Sprites/icon.svg" id="1_ayd6b"]
+[ext_resource type="Texture2D" uid="uid://bqjkd0yrirspg" path="res://Sprites/Bullet.png" id="2_14k46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvus8"]
+atlas = ExtResource("2_14k46")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pypll"]
+atlas = ExtResource("2_14k46")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg3fc"]
+atlas = ExtResource("2_14k46")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvob7"]
+atlas = ExtResource("2_14k46")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyrxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvus8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pypll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg3fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvob7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ta373"]
-radius = 26.24881
+radius = 5.0990195
 
 [node name="Bullet" type="RigidBody2D" unique_id=621432341]
 collision_layer = 2
@@ -15,9 +51,9 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_4s4u5")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=662281483]
-scale = Vector2(0.27734375, 0.26171875)
-texture = ExtResource("1_ayd6b")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=9018848]
+sprite_frames = SubResource("SpriteFrames_xyrxm")
+frame_progress = 0.88948244
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436231566]
 shape = SubResource("CircleShape2D_ta373")
