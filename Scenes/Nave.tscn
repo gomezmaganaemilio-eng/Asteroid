@@ -48,7 +48,7 @@ state_ship = NodePath("AnimatedSprite2D")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_lqa7a")
 animation = &"StateShip"
-frame_progress = 0.8984479
+frame_progress = 0.30458182
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=208206914]
 position = Vector2(22.408304, -6.447915)

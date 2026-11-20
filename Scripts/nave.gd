@@ -26,6 +26,7 @@ func _ready() -> void:
 
 #Update
 func _process(delta:float) -> void:
+	state_ship.play()
 	if global_position.x >= 1152 - 28:
 		global_position.x = 0 + 30
 	if global_position.x <= 0 + 28:

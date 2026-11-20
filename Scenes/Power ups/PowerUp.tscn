@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cokedf0r2tqxe"]
+
+[ext_resource type="Script" uid="uid://8jb1upq4ta0s" path="res://Scripts/power_up.gd" id="1_sjav8"]
+[ext_resource type="Texture2D" uid="uid://bqjkd0yrirspg" path="res://Sprites/Bullet.png" id="2_pfnkp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjdqc"]
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2h83"]
+atlas = ExtResource("2_pfnkp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbjuf"]
+atlas = ExtResource("2_pfnkp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqc81"]
+atlas = ExtResource("2_pfnkp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlq5e"]
+atlas = ExtResource("2_pfnkp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjdqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2h83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbjuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqc81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlq5e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PowerUp" type="RigidBody2D" unique_id=346782128 node_paths=PackedStringArray("power1")]
+gravity_scale = 0.0
+script = ExtResource("1_sjav8")
+power1 = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=728363918]
+shape = SubResource("CircleShape2D_cjdqc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=504341131]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_cjdqc")

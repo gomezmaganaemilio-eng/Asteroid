@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dvoo43cpflwr7" path="res://Scripts/main_scene.gd" id="1_tphip"]
 [ext_resource type="PackedScene" uid="uid://b5655r4gpcoj1" path="res://Scenes/Nave.tscn" id="2_7qccc"]
-[ext_resource type="PackedScene" uid="uid://h0fhjpi0jl0f" path="res://Scenes/piercing.tscn" id="3_ec7p0"]
 [ext_resource type="Script" uid="uid://cca2qgiprep6h" path="res://Scripts/hard_asteroid.gd" id="4_ec7p0"]
 [ext_resource type="PackedScene" uid="uid://cq8i3i0shgvjj" path="res://Scenes/Asteroid.tscn" id="4_yui23"]
 [ext_resource type="Script" uid="uid://c3ldpypptwr6l" path="res://Scripts/UpdateUI.gd" id="5_yui23"]
+[ext_resource type="PackedScene" uid="uid://cokedf0r2tqxe" path="res://Scenes/Power ups/PowerUp.tscn" id="6_g6c8t"]
 
 [node name="Main" type="Node2D" unique_id=1761369529]
 script = ExtResource("1_tphip")
@@ -13,7 +13,6 @@ script = ExtResource("1_tphip")
 [node name="Nave" parent="." unique_id=1707135784 instance=ExtResource("2_7qccc")]
 position = Vector2(547, 298)
 collision_mask = 245
-bullet = ExtResource("3_ec7p0")
 
 [node name="Asteroid" parent="." unique_id=1443438254 instance=ExtResource("4_yui23")]
 position = Vector2(900, 230)
@@ -51,3 +50,9 @@ offset_top = -0.10400009
 offset_right = -0.18400574
 offset_bottom = 0.2559967
 text = "Hp:"
+
+[node name="PowerUp" parent="." unique_id=346782128 instance=ExtResource("6_g6c8t")]
+position = Vector2(728, 329)
+collision_layer = 16
+collision_mask = 17
+script = null
