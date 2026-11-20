@@ -8,6 +8,7 @@ class_name Ship extends RigidBody2D
 @export_category("Shooting")
 @export var bullet: PackedScene #export es como el serializefield
 @export var pivot: Node2D
+@export var state_ship: AnimatedSprite2D
 
 var initPos = Vector2.ZERO
 var iFrames = 0

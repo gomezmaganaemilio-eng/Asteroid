@@ -1,10 +1,39 @@
 [gd_scene format=3 uid="uid://b5655r4gpcoj1"]
 
-[ext_resource type="Texture2D" uid="uid://dqvvj7sie6oxg" path="res://Sprites/icon.svg" id="1_l7t7u"]
 [ext_resource type="Script" uid="uid://ctnh1ss40felv" path="res://Scripts/nave.gd" id="1_ta373"]
-[ext_resource type="PackedScene" uid="uid://dhy7cwe50334r" path="res://Bullet.tscn" id="2_n06m3"]
+[ext_resource type="PackedScene" uid="uid://dhy7cwe50334r" path="res://Scenes/Bullet.tscn" id="2_n06m3"]
+[ext_resource type="Texture2D" uid="uid://d338t4me6f5sw" path="res://Sprites/Asteroid noel.png" id="3_vi8xp"]
 
-[node name="Nave" type="RigidBody2D" unique_id=1707135784 node_paths=PackedStringArray("pivot")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvnrb"]
+atlas = ExtResource("3_vi8xp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wqsb"]
+atlas = ExtResource("3_vi8xp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj6da"]
+atlas = ExtResource("3_vi8xp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqa7a"]
+animations = [{
+"frames": [{
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_tvnrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wqsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj6da")
+}],
+"loop": 1,
+"name": &"StateShip",
+"speed": 5.0
+}]
+
+[node name="Nave" type="RigidBody2D" unique_id=1707135784 node_paths=PackedStringArray("pivot", "state_ship")]
 collision_mask = 4
 gravity_scale = 0.0
 lock_rotation = true
@@ -13,15 +42,17 @@ max_contacts_reported = 1
 script = ExtResource("1_ta373")
 bullet = ExtResource("2_n06m3")
 pivot = NodePath("Pivot")
+state_ship = NodePath("AnimatedSprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1963766003]
-position = Vector2(0, 1.1920929e-07)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_l7t7u")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=213398352]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_lqa7a")
+animation = &"StateShip"
+frame_progress = 0.8984479
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=208206914]
 position = Vector2(22.408304, -6.447915)
 scale = Vector2(4.4764547, 4.9479165)
-polygon = PackedVector2Array(1, 7, -11, 7, -8, 2, -8, 2, -11, -5, 1, -5, -2, 2)
+polygon = PackedVector2Array(-1.6549487, 5.547368, -3.6654682, 5.547368, -4.3356414, 4.334737, -5.4525967, 4.334737, -6.346161, 5.547368, -8.35668, 5.547368, -9.026854, 4.9410524, -9.026854, 3.930526, -8, 2, -8, 2, -5.4525967, -2.3347373, -4.3356414, -2.3347373, -2, 2, -0.98477554, 3.7284207, -0.98477554, 4.9410524)
 
 [node name="Pivot" type="Node2D" parent="." unique_id=318504636]
